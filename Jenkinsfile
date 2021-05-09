@@ -16,7 +16,7 @@ pipeline {
         
         stage('Publication du Binaire') {
             steps {
-                sh "curl -u admin:formation-2021 --upload-file target/shopfront-0.0.1-SNAPSHOT.jar 'http://10.10.20.31:8081/shopfront/shopfront-0.0.1-SNAPSHOT.jar'"  
+                sh "curl -u admin:formation-2021 --upload-file target/shopfront-0.0.1-SNAPSHOT.jar 'http://10.10.20.31:8081/repository/shopfront/shopfront-0.0.1-SNAPSHOT.jar'"  
             }	   
         }
         stage('Téléchargement du binaire') { 
