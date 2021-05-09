@@ -38,7 +38,7 @@ pipeline {
         }  
         stage ('Création de l\'image Docker'){
 		    steps {
-			    sh ' docker build -t shopfront_image . '
+			    sh ' sudo docker build -t shopfront_image . '
 		 }
 	 }
 
