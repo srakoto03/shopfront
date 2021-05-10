@@ -36,11 +36,11 @@ pipeline {
                 sh "curl -u admin:formation-2021 --upload-file /home/jenkins/tomcat/webapps/shopfront-0.0.1-SNAPSHOT.jar 'http://10.10.20.31:8081/repository/shopfront/shopfront.jar'" 
             } 
         }  
-        stage ('Création de l\'image Docker'){
+        stage ('Création et stockage de l\'image Docker'){
 		 steps {
 			 sh " wget -P /home/jenkins/tomcat/webapps http://10.10.20.31:8081/repository/shopfront/shopfront-0.0.1-SNAPSHOT.jar"
 			 sh " mv /home/jenkins/tomcat/webapps/shopfront-0.0.1-SNAPSHOT.jar ./target/ "
-			 sh " sudo docker build -t shopfront . "
+			 sh " sudo docker build -t sdocker03/shopfront . "
 		 }
 	 }
 
